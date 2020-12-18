@@ -56,6 +56,8 @@ echo reached %URL% at %CurrentTime%.
 rem adds an empty line to the reach-log after every entry
 echo. >> %cd%\logs\reach.log
 
+set /A TimesPinged=%TimesReached%+%TimesFailed%
+
 rem writes the stats-logfile new every time executed
 del %cd%\logs\stats.log
 echo STATS: >> %cd%\logs\stats.log
@@ -71,6 +73,8 @@ echo. >> %cd%\logs\stats.log
 echo Times Reached: %TimesReached% >> %cd%\logs\stats.log
 echo. >> %cd%\logs\stats.log
 echo Times Failed: %TimesFailed% >> %cd%\logs\stats.log
+echo. >> %cd%\logs\stats.log
+echo Times Pinged: %TimesPinged% >> %cd%\logs\stats.log
 echo. >> %cd%\logs\stats.log
 echo Last Time Reached: %LastReached% >> %cd%\logs\stats.log
 echo. >> %cd%\logs\stats.log
